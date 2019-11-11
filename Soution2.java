@@ -1,29 +1,32 @@
 class Solution2 {
 
     public static void main(String[] args) {
-        int[] v = new int[100];
-        for (int i = 0; i < v.length; i++) {
-            if (i == 0) {
-                v[0] = 1;
+        int count=4000000;    
+        int n1=0,n2=1,n3;
+        for(int i=0;i<count;++i)   {
+            if (i<2) {
+                v[i] = i;
             } else {
-                int p = v[i - 1];
-                int pp = 0;
-                if (i == 1) {
-                    pp = 0;
-                } else {
-                    pp = v[i - 2];
-                }
-
-                v[i] = p + pp;
+                n3=n1+n2;
+                v[i] = n3;  
+                n1=n2; 
+                n2=n3; 
             }
-
         }
 
-        for (
+        int sum = 0;
 
-                int i = 0; i < v.length; i++) {
-            System.out.print(v[i] + ", ");
+        for(int i = 0;i<count;++i){
+            if ((i%2)==0) {
+                sum += v[i];   
+            }
         }
+        System.out.print(" "+sum);
+    }
+
+    public static int[] getFab(int count){
+        
+        return v;
     }
 
 }
